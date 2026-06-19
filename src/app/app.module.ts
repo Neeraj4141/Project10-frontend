@@ -29,6 +29,9 @@ import { MarksheetListComponent } from './marksheet/marksheet-list.component';
 import { StudentListComponent } from './student/student-list.component';
 import { TimetableListComponent } from './timetable/timetable-list.component';
 import { SubjectListComponent } from './subject/subject-list.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './login/signup.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +55,10 @@ import { SubjectListComponent } from './subject/subject-list.component';
     MarksheetListComponent,
     StudentListComponent,
     TimetableListComponent,
-    SubjectListComponent
+    SubjectListComponent,
+    LoginComponent,
+    SignupComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

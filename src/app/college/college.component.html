@@ -39,10 +39,7 @@
                     Name <span class="text-danger">*</span>
                 </label>
 
-                <input type="text"
-                    name="name"
-                    [(ngModel)]="form.data.name"
-                    placeholder="Enter College Name"
+                <input type="text" name="name" [(ngModel)]="form.data.name" placeholder="Enter College Name"
                     class="form-control">
 
                 <div class="text-danger small mt-1">
@@ -56,10 +53,7 @@
                     Address <span class="text-danger">*</span>
                 </label>
 
-                <input type="text"
-                    name="address"
-                    [(ngModel)]="form.data.address"
-                    placeholder="Enter Address"
+                <input type="text" name="address" [(ngModel)]="form.data.address" placeholder="Enter Address"
                     class="form-control">
 
                 <div class="text-danger small mt-1">
@@ -73,10 +67,7 @@
                     State <span class="text-danger">*</span>
                 </label>
 
-                <input type="text"
-                    name="state"
-                    [(ngModel)]="form.data.state"
-                    placeholder="Enter State"
+                <input type="text" name="state" [(ngModel)]="form.data.state" placeholder="Enter State"
                     class="form-control">
 
                 <div class="text-danger small mt-1">
@@ -90,10 +81,7 @@
                     City <span class="text-danger">*</span>
                 </label>
 
-                <input type="text"
-                    name="city"
-                    [(ngModel)]="form.data.city"
-                    placeholder="Enter City"
+                <input type="text" name="city" [(ngModel)]="form.data.city" placeholder="Enter City"
                     class="form-control">
 
                 <div class="text-danger small mt-1">
@@ -107,12 +95,8 @@
                     Phone No <span class="text-danger">*</span>
                 </label>
 
-                <input type="text"
-                    name="phoneNo"
-                    [(ngModel)]="form.data.phoneNo"
-                    maxlength="10"
-                    placeholder="Enter Phone No."
-                    class="form-control">
+                <input type="text" name="phoneNo" [(ngModel)]="form.data.phoneNo" maxlength="10"
+                    placeholder="Enter Phone No." class="form-control">
 
                 <div class="text-danger small mt-1">
                     {{form.inputerror.phoneNo}}
@@ -122,16 +106,12 @@
             <!-- Buttons -->
             <div class="d-flex gap-2">
 
-                <button type="button"
-                    (click)="submit()"
-                    class="btn btn-primary">
+                <button type="button" (click)="submit()" class="btn btn-primary">
                     <i class="bi bi-save me-1"></i>
                     Save
                 </button>
 
-                <button type="button"
-                    (click)="forward('/collegelist')"
-                    class="btn btn-outline-secondary">
+                <button type="button" (click)="forward('/college-list')" class="btn btn-outline-secondary">
                     <i class="bi bi-list-ul me-1"></i>
                     List
                 </button>

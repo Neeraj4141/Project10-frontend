@@ -18,8 +18,20 @@ import { MarksheetListComponent } from './marksheet/marksheet-list.component';
 import { StudentListComponent } from './student/student-list.component';
 import { TimetableListComponent } from './timetable/timetable-list.component';
 import { SubjectListComponent } from './subject/subject-list.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './login/signup.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'dashboard'
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent
+  },
   {
     path: 'role',
     component: RoleComponent
@@ -127,6 +139,14 @@ const routes: Routes = [
   {
     path: 'timetable/:id',
     component: TimetableComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'signup',
+    component: SignupComponent
   }
 ];
 

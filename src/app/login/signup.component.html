@@ -1,0 +1,174 @@
+<app-navbar></app-navbar>
+
+<div class="container py-4" style="max-width: 700px;">
+    <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+
+        <!-- Header -->
+        <div class="card-header text-white border-0 py-3 px-4"
+            style="background: linear-gradient(135deg, #0d2137 0%, #1565c0 100%);">
+
+            <h5 class="mb-0 fw-bold">
+                <i class="bi bi-person-plus-fill me-2"></i>
+                User Registration
+            </h5>
+        </div>
+
+        <!-- Body -->
+        <div class="card-body px-4 py-4">
+
+            <!-- Error Message -->
+            <div class="alert alert-danger py-2 mx-3 mt-3 d-flex justify-content-between align-items-center"
+                *ngIf="form.error && form.message">
+
+                <span>
+                    <i class="bi bi-exclamation-circle-fill me-2"></i>
+                    {{form.message}}
+                </span>
+
+                <button type="button" class="btn-close" (click)="form.message=''">
+                </button>
+
+            </div>
+
+            <!-- Success Message -->
+            <div class="alert alert-success py-2 mx-3 mt-3 d-flex justify-content-between align-items-center"
+                *ngIf="!form.error && form.message">
+
+                <span>
+                    <i class="bi bi-check-circle-fill me-2"></i>
+                    {{form.message}}
+                </span>
+
+                <button type="button" class="btn-close" (click)="form.message=''">
+                </button>
+
+            </div>
+
+            <div class="row g-3">
+
+                <!-- First Name -->
+                <div class="col-md-6">
+                    <label class="form-label fw-semibold">
+                        First Name <span class="text-danger">*</span>
+                    </label>
+
+                    <input type="text" name="firstName" [(ngModel)]="form.data.firstName" placeholder="Enter First Name"
+                        class="form-control">
+
+                    <div class="text-danger small mt-1">
+                        {{form.inputerror.firstName}}
+                    </div>
+                </div>
+
+                <!-- Last Name -->
+                <div class="col-md-6">
+                    <label class="form-label fw-semibold">
+                        Last Name <span class="text-danger">*</span>
+                    </label>
+
+                    <input type="text" name="lastName" [(ngModel)]="form.data.lastName" placeholder="Enter Last Name"
+                        class="form-control">
+
+                    <div class="text-danger small mt-1">
+                        {{form.inputerror.lastName}}
+                    </div>
+                </div>
+
+                <!-- Login ID -->
+                <div class="col-md-12">
+                    <label class="form-label fw-semibold">
+                        Login Id <span class="text-danger">*</span>
+                    </label>
+
+                    <input type="text" name="loginId" [(ngModel)]="form.data.loginId" placeholder="Enter Login ID"
+                        class="form-control">
+
+                    <div class="text-danger small mt-1">
+                        {{form.inputerror.loginId}}
+                    </div>
+                </div>
+
+                <!-- Password -->
+                <div class="col-md-6">
+                    <label class="form-label fw-semibold">
+                        Password <span class="text-danger">*</span>
+                    </label>
+
+                    <input type="password" name="password" [(ngModel)]="form.data.password" placeholder="Enter Password"
+                        class="form-control">
+
+                    <div class="text-danger small mt-1">
+                        {{form.inputerror.password}}
+                    </div>
+                </div>
+
+                <!-- DOB -->
+                <div class="col-md-6">
+                    <label class="form-label fw-semibold">
+                        Date of Birth <span class="text-danger">*</span>
+                    </label>
+
+                    <input type="date" name="dob" [(ngModel)]="form.data.dob" class="form-control">
+
+                    <div class="text-danger small mt-1">
+                        {{form.inputerror.dob}}
+                    </div>
+                </div>
+
+                <!-- Gender -->
+                <div class="col-md-6">
+                    <label class="form-label fw-semibold">
+                        Gender <span class="text-danger">*</span>
+                    </label>
+
+                    <select name="gender" [(ngModel)]="form.data.gender" class="form-select">
+
+                        <option value="undefined">------------Select------------</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+
+                    </select>
+
+                    <div class="text-danger small mt-1">
+                        {{form.inputerror.gender}}
+                    </div>
+                </div>
+
+                <!-- Mobile -->
+                <div class="col-md-6">
+                    <label class="form-label fw-semibold">
+                        Mobile <span class="text-danger">*</span>
+                    </label>
+
+                    <input type="text" name="phone" [(ngModel)]="form.data.phone" maxlength="10"
+                        placeholder="Enter Mobile Number" class="form-control">
+
+                    <div class="text-danger small mt-1">
+                        {{form.inputerror.phone}}
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Buttons -->
+            <div class="d-flex gap-2 mt-4">
+
+                <button type="button" (click)="signUp()" class="btn btn-primary">
+
+                    <i class="bi bi-person-check-fill me-1"></i>
+                    Sign Up
+                </button>
+
+                <button type="button" (click)="reset()" class="btn btn-outline-secondary">
+
+                    <i class="bi bi-arrow-clockwise me-1"></i>
+                    Reset
+                </button>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

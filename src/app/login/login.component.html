@@ -1,4 +1,5 @@
 <app-navbar></app-navbar>
+
 <div class="container py-4" style="max-width: 580px;">
     <div class="card border-10 shadow-sm rounded-4 overflow-hidden">
 
@@ -6,22 +7,18 @@
         <div class="card-header text-white border-0 py-3 px-4"
             style="background: linear-gradient(135deg, #0d2137 0%, #1565c0 100%);">
 
-            <h5 class="mb-0 fw-bold" *ngIf="!form.data.id">
-                <i class="bi bi-shield-fill-check me-2"></i>
-                Add Role
+            <h5 class="mb-0 fw-bold">
+                <i class="bi bi-box-arrow-in-right me-2"></i>
+                Login
             </h5>
 
-            <h5 class="mb-0 fw-bold" *ngIf="form.data.id > 0">
-                <i class="bi bi-shield-fill-check me-2"></i>
-                Update Role
-            </h5>
         </div>
 
         <!-- Body -->
         <div class="card-body px-4 py-4">
 
             <!-- Error Message -->
-            <div class="alert alert-danger py-2 mx-3 mt-3 d-flex justify-content-between align-items-center"
+            <div class="alert alert-danger py-2 d-flex justify-content-between align-items-center"
                 *ngIf="form.error && form.message">
 
                 <span>
@@ -35,9 +32,8 @@
             </div>
 
             <!-- Success Message -->
-            <div class="alert alert-success py-2 mx-3 mt-3 d-flex justify-content-between align-items-center"
+            <div class="alert alert-success py-2 d-flex justify-content-between align-items-center"
                 *ngIf="!form.error && form.message">
-
                 <span>
                     <i class="bi bi-check-circle-fill me-2"></i>
                     {{form.message}}
@@ -48,50 +44,62 @@
 
             </div>
 
-            <!-- Name -->
+            <!-- Login Id -->
             <div class="mb-3">
                 <label class="form-label fw-semibold">
-                    Name <span class="text-danger">*</span>
+                    Login Id <span class="text-danger">*</span>
                 </label>
 
-                <input type="text" name="name" [(ngModel)]="form.data.name" placeholder="Enter Role Name"
+                <input type="text" name="loginId" [(ngModel)]="form.data.loginId" placeholder="Enter Login ID"
                     class="form-control">
 
                 <div class="text-danger small mt-1">
-                    {{form.inputerror.name}}
+                    {{form.inputerror.loginId}}
                 </div>
             </div>
 
-            <!-- Description -->
+            <!-- Password -->
             <div class="mb-4">
                 <label class="form-label fw-semibold">
-                    Description <span class="text-danger">*</span>
+                    Password <span class="text-danger">*</span>
                 </label>
 
-                <textarea name="description" [(ngModel)]="form.data.description" rows="3"
-                    placeholder="Enter Short Description" class="form-control" style="resize: none;">
-                </textarea>
+                <input type="password" name="password" [(ngModel)]="form.data.password" placeholder="Enter Password"
+                    class="form-control">
 
                 <div class="text-danger small mt-1">
-                    {{form.inputerror.description}}
+                    {{form.inputerror.password}}
                 </div>
             </div>
 
             <!-- Buttons -->
-            <div class="d-flex gap-2">
+            <div class="d-flex gap-2 mb-3">
 
-                <button type="button" (click)="submit()" class="btn btn-primary">
-                    <i class="bi bi-save me-1"></i>
-                    Save
+                <button type="button" (click)="signIn()" class="btn btn-primary">
+
+                    <i class="bi bi-box-arrow-in-right me-1"></i>
+                    Sign In
                 </button>
 
-                <button type="button" (click)="forward('role-list')" class="btn btn-outline-secondary">
-                    <i class="bi bi-list-ul me-1"></i>
-                    List
+                <button type="button" (click)="signUp()" class="btn btn-outline-secondary">
+
+                    <i class="bi bi-person-plus-fill me-1"></i>
+                    Sign Up
                 </button>
+
+            </div>
+
+            <!-- Forgot Password -->
+            <div class="text-center">
+                <a [routerLink]="['/forgotpassword']" class="text-decoration-none fw-semibold">
+                    <i class="bi bi-key-fill me-1"></i>
+                    Forgot my password?
+                </a>
             </div>
 
         </div>
+
     </div>
 </div>
+
 <app-footer></app-footer>

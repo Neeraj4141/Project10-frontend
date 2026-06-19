@@ -21,28 +21,40 @@
         <!-- Body -->
         <div class="card-body px-4 py-4">
 
-            <!-- Success Message -->
-            <div class="alert alert-success py-2" *ngIf="!form.error && form.message">
-                <i class="bi bi-check-circle-fill me-2"></i>
-                {{form.message}}
-            </div>
-
             <!-- Error Message -->
-            <div class="alert alert-danger py-2" *ngIf="form.error && form.message">
-                <i class="bi bi-exclamation-triangle-fill me-2"></i>
-                {{form.message}}
+            <div class="alert alert-danger py-2 mx-3 mt-3 d-flex justify-content-between align-items-center"
+                *ngIf="form.error && form.message">
+
+                <span>
+                    <i class="bi bi-exclamation-circle-fill me-2"></i>
+                    {{form.message}}
+                </span>
+
+                <button type="button" class="btn-close" (click)="form.message=''">
+                </button>
+
             </div>
 
+            <!-- Success Message -->
+            <div class="alert alert-success py-2 mx-3 mt-3 d-flex justify-content-between align-items-center"
+                *ngIf="!form.error && form.message">
+
+                <span>
+                    <i class="bi bi-check-circle-fill me-2"></i>
+                    {{form.message}}
+                </span>
+
+                <button type="button" class="btn-close" (click)="form.message=''">
+                </button>
+
+            </div>
             <!-- Name -->
             <div class="mb-3">
                 <label class="form-label fw-semibold">
                     Name <span class="text-danger">*</span>
                 </label>
 
-                <input type="text"
-                    name="name"
-                    [(ngModel)]="form.data.name"
-                    placeholder="Enter Course Name"
+                <input type="text" name="name" [(ngModel)]="form.data.name" placeholder="Enter Course Name"
                     class="form-control">
 
                 <div class="text-danger small mt-1">
@@ -56,9 +68,7 @@
                     Duration <span class="text-danger">*</span>
                 </label>
 
-                <select name="duration"
-                    [(ngModel)]="form.data.duration"
-                    class="form-select">
+                <select name="duration" [(ngModel)]="form.data.duration" class="form-select">
 
                     <option value="undefined">------------Select------------</option>
                     <option [value]="1">1 Year</option>
@@ -79,12 +89,8 @@
                     Description <span class="text-danger">*</span>
                 </label>
 
-                <textarea name="description"
-                    [(ngModel)]="form.data.description"
-                    rows="3"
-                    placeholder="Enter Short Description"
-                    class="form-control"
-                    style="resize: none;">
+                <textarea name="description" [(ngModel)]="form.data.description" rows="3"
+                    placeholder="Enter Short Description" class="form-control" style="resize: none;">
                 </textarea>
 
                 <div class="text-danger small mt-1">
@@ -93,22 +99,16 @@
             </div>
 
             <!-- Buttons -->
-            <div class="d-flex gap-2">
-
-                <button type="button"
-                    (click)="submit()"
-                    class="btn btn-primary">
+           <div class="d-flex gap-2 mt-4 pt-3 border-top">
+                <button class="btn btn-primary" (click)="submit()">
                     <i class="bi bi-save me-1"></i>
                     Save
                 </button>
 
-                <button type="button"
-                    (click)="forward('courselist')"
-                    class="btn btn-outline-secondary">
+                <button type="button" (click)="forward('course-list')" class="btn btn-outline-secondary">
                     <i class="bi bi-list-ul me-1"></i>
                     List
                 </button>
-
             </div>
 
         </div>
