@@ -32,6 +32,7 @@ import { SubjectListComponent } from './subject/subject-list.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './login/signup.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ForgotpasswordComponent } from './login/forgotpassword.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     SubjectListComponent,
     LoginComponent,
     SignupComponent,
-    DashboardComponent
+    DashboardComponent,
+    ForgotpasswordComponent
   ],
   imports: [
     BrowserModule,

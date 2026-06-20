@@ -34,6 +34,7 @@ export class NavbarComponent {
     var _self = this;
     this.httpService.get(this.endpoint + 'logout', function (res: any) {
       localStorage.clear();
+      sessionStorage.clear();
       _self.router.navigateByUrl('login')
     });
   }
