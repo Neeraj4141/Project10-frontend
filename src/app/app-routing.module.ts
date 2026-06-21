@@ -22,6 +22,7 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './login/signup.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ForgotpasswordComponent } from './login/forgotpassword.component';
+import { MyprofileComponent } from './user/myprofile.component';
 
 const routes: Routes = [
   {
@@ -152,6 +153,14 @@ const routes: Routes = [
   {
     path: 'forgotpassword',
     component: ForgotpasswordComponent
+  },
+  {
+    path: 'myprofile',
+    component: MyprofileComponent
+  },
+   {
+    path: 'myprofile/:id',
+    component: MyprofileComponent
   }
 ];
 

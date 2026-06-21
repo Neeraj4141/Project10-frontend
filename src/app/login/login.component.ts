@@ -21,10 +21,14 @@ export class LoginComponent {
   constructor(private httpService: HttpServiceService, private router: Router, private activatedRoute: ActivatedRoute) {
 
     this.activatedRoute.queryParams.subscribe(param => {
+      let msg = sessionStorage.getItem("message");
+      if (msg) {
+        this.form.message = msg;
+        sessionStorage.removeItem("message");
+      }
+
       if (param['errorMessage']) {
         this.form.errorMessage = param['errorMessage'];
-        
-        console.log("error===", this.form.errorMessage)
       }
     })
 
