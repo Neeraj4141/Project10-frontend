@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { RoleComponent } from './role/role.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
 import { HttpServiceService } from './http-service.service';
 import { EndpointServiceService } from './endpoint-service.service';
 import { ServiceLocatorService } from './service-locator.service';
@@ -34,6 +34,10 @@ import { SignupComponent } from './login/signup.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ForgotpasswordComponent } from './login/forgotpassword.component';
 import { MyprofileComponent } from './user/myprofile.component';
+import { ChangepasswordComponent } from './user/changepassword.component';
+import { MarksheetmeritlistComponent } from './marksheet/marksheetmeritlist.component';
+import { GetmarksheetComponent } from './marksheet/getmarksheet.component';
+import { AuthService } from './auth-service.service';
 
 @NgModule({
   declarations: [
@@ -62,7 +66,10 @@ import { MyprofileComponent } from './user/myprofile.component';
     SignupComponent,
     DashboardComponent,
     ForgotpasswordComponent,
-    MyprofileComponent
+    MyprofileComponent,
+    ChangepasswordComponent,
+    MarksheetmeritlistComponent,
+    GetmarksheetComponent
   ],
   imports: [
     BrowserModule,
@@ -71,6 +78,9 @@ import { MyprofileComponent } from './user/myprofile.component';
     FormsModule
   ],
   providers: [
+     {
+      provide: HTTP_INTERCEPTORS, useClass: AuthService, multi: true
+    },
     HttpServiceService,
     EndpointServiceService,
     ServiceLocatorService,

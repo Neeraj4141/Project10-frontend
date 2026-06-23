@@ -23,6 +23,9 @@ import { SignupComponent } from './login/signup.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ForgotpasswordComponent } from './login/forgotpassword.component';
 import { MyprofileComponent } from './user/myprofile.component';
+import { ChangepasswordComponent } from './user/changepassword.component';
+import { MarksheetmeritlistComponent } from './marksheet/marksheetmeritlist.component';
+import { GetmarksheetComponent } from './marksheet/getmarksheet.component';
 
 const routes: Routes = [
   {
@@ -158,9 +161,21 @@ const routes: Routes = [
     path: 'myprofile',
     component: MyprofileComponent
   },
-   {
+  {
     path: 'myprofile/:id',
     component: MyprofileComponent
+  },
+  {
+    path: 'changepassword',
+    component: ChangepasswordComponent
+  },
+  {
+    path: 'marksheetmeritlist',
+    component: MarksheetmeritlistComponent
+  },
+  {
+    path: 'getmarksheet',
+    component: GetmarksheetComponent
   }
 ];
 
