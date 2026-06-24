@@ -38,6 +38,8 @@ import { ChangepasswordComponent } from './user/changepassword.component';
 import { MarksheetmeritlistComponent } from './marksheet/marksheetmeritlist.component';
 import { GetmarksheetComponent } from './marksheet/getmarksheet.component';
 import { AuthService } from './auth-service.service';
+import { GymmemberComponent } from './gymmember/gymmember.component';
+import { GymmemberListComponent } from './gymmember/gymmember-list.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +71,9 @@ import { AuthService } from './auth-service.service';
     MyprofileComponent,
     ChangepasswordComponent,
     MarksheetmeritlistComponent,
-    GetmarksheetComponent
+    GetmarksheetComponent,
+    GymmemberComponent,
+    GymmemberListComponent
   ],
   imports: [
     BrowserModule,

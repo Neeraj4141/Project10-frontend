@@ -26,6 +26,8 @@ import { MyprofileComponent } from './user/myprofile.component';
 import { ChangepasswordComponent } from './user/changepassword.component';
 import { MarksheetmeritlistComponent } from './marksheet/marksheetmeritlist.component';
 import { GetmarksheetComponent } from './marksheet/getmarksheet.component';
+import { GymmemberComponent } from './gymmember/gymmember.component';
+import { GymmemberListComponent } from './gymmember/gymmember-list.component';
 
 const routes: Routes = [
   {
@@ -176,6 +178,18 @@ const routes: Routes = [
   {
     path: 'getmarksheet',
     component: GetmarksheetComponent
+  },
+  {
+    path: 'gymmember',
+    component: GymmemberComponent
+  },
+  {
+    path: 'gymmember/:id',
+    component: GymmemberComponent
+  },
+  {
+    path: 'gymmember-list',
+    component: GymmemberListComponent
   }
 ];
 
