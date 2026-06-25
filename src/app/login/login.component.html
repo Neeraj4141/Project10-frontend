@@ -13,7 +13,7 @@
                 </div>
             </div>
             <h4 class="fw-bold mb-1">
-                Login
+                {{'Login' | translate }}
             </h4>
             <p class="mb-0 opacity-75 small">Online Result System</p>
         </div>
@@ -55,7 +55,7 @@
             <!-- Login Id -->
             <div class="mb-3">
                 <label class="form-label fw-semibold">
-                    Login Id <span class="text-danger">*</span>
+                   {{'Login Id' | translate }} <span class="text-danger">*</span>
                 </label>
 
                 <input type="text" name="loginId" [(ngModel)]="form.data.loginId" placeholder="Enter Login ID"
@@ -69,7 +69,7 @@
             <!-- Password -->
             <div class="mb-4">
                 <label class="form-label fw-semibold">
-                    Password <span class="text-danger">*</span>
+                    {{'Password' | translate}}<span class="text-danger">*</span>
                 </label>
 
                 <input type="password" name="password" [(ngModel)]="form.data.password" placeholder="Enter Password"
@@ -86,13 +86,13 @@
                 <button type="button" (click)="signIn()" class="btn btn-primary">
 
                     <i class="bi bi-box-arrow-in-right me-1"></i>
-                    Sign In
+                    {{'Sign In' | translate}}
                 </button>
 
                 <button type="button" (click)="signUp()" class="btn btn-outline-secondary">
 
                     <i class="bi bi-person-plus-fill me-1"></i>
-                    Sign Up
+                    {{'Sign Up' | translate}}
                 </button>
 
             </div>

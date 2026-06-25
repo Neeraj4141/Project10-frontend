@@ -8,12 +8,12 @@
 
             <h5 class="mb-0 fw-bold" *ngIf="!form.data.id">
                 <i class="bi bi-person-fill-add me-2"></i>
-                Add User
+               {{'Add User' | translate }}
             </h5>
 
             <h5 class="mb-0 fw-bold" *ngIf="form.data.id>0">
                 <i class="bi bi-pencil-square me-2"></i>
-                Update User
+                {{'UpdateUser' | translate}}
             </h5>
 
         </div>

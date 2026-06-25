@@ -5,8 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-gymmember-list',
-  templateUrl: './gymmember-list.component.html',
-  styleUrls: ['./gymmember-list.component.css']
+  templateUrl: './gymmember-list.component.html'
 })
 export class GymmemberListComponent extends BaseListCtl {
 

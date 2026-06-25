@@ -40,6 +40,14 @@ import { GetmarksheetComponent } from './marksheet/getmarksheet.component';
 import { AuthService } from './auth-service.service';
 import { GymmemberComponent } from './gymmember/gymmember.component';
 import { GymmemberListComponent } from './gymmember/gymmember-list.component';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { VendorComponent } from './vendor/vendor.component';
+import { VendorListComponent } from './vendor/vendor-list.component';
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [
@@ -73,16 +81,25 @@ import { GymmemberListComponent } from './gymmember/gymmember-list.component';
     MarksheetmeritlistComponent,
     GetmarksheetComponent,
     GymmemberComponent,
-    GymmemberListComponent
+    GymmemberListComponent,
+    VendorComponent,
+    VendorListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [
-     {
+    {
       provide: HTTP_INTERCEPTORS, useClass: AuthService, multi: true
     },
     HttpServiceService,

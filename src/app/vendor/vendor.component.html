@@ -8,13 +8,13 @@
             style="background: linear-gradient(135deg, #0d2137 0%, #1565c0 100%);">
 
             <h5 class="mb-0 fw-bold" *ngIf="!form.data.id">
-                <i class="bi bi-journal-text me-2"></i>
-                {{'Add Marksheet' | translate }}
+                <i class="bi bi-shop-window me-2"></i>
+                Add Vendor
             </h5>
 
             <h5 class="mb-0 fw-bold" *ngIf="form.data.id > 0">
-                <i class="bi bi-journal-text me-2"></i>
-                Update Marksheet
+                <i class="bi bi-pencil-square me-2"></i>
+                Update Vendor
             </h5>
         </div>
 
@@ -49,91 +49,86 @@
 
             </div>
 
-            <!-- Roll No -->
+            <!-- Vendor Name -->
             <div class="mb-3">
                 <label class="form-label fw-semibold">
-                    Roll No <span class="text-danger">*</span>
+                    Vendor Name <span class="text-danger">*</span>
                 </label>
 
-                <input type="text" name="rollNo" [(ngModel)]="form.data.rollNo" maxlength="5"
-                    placeholder="Enter Roll No" class="form-control">
+                <input type="text"
+                    name="vendorName"
+                    [(ngModel)]="form.data.vendorName"
+                    placeholder="Enter Vendor Name"
+                    class="form-control">
 
                 <div class="text-danger small mt-1">
-                    {{form.inputerror.rollNo}}
+                    {{form.inputerror.vendorName}}
                 </div>
             </div>
 
-            <!-- Student Name -->
+            <!-- City -->
             <div class="mb-3">
                 <label class="form-label fw-semibold">
-                    Name <span class="text-danger">*</span>
+                    City <span class="text-danger">*</span>
                 </label>
 
-                <select name="studentId" [(ngModel)]="form.data.studentId" class="form-select">
-
-                    <option value="undefined">------------Select------------</option>
-
-                    <option *ngFor="let obj of form.preload.studentList" [value]="obj.key">
-                        {{obj.value}}
-                    </option>
-                </select>
+                <input type="text"
+                    name="city"
+                    [(ngModel)]="form.data.city"
+                    placeholder="Enter City"
+                    class="form-control">
 
                 <div class="text-danger small mt-1">
-                    {{form.inputerror.studentId}}
+                    {{form.inputerror.city}}
                 </div>
             </div>
 
-            <!-- Physics -->
+            <!-- Mobile Number -->
             <div class="mb-3">
                 <label class="form-label fw-semibold">
-                    Physics <span class="text-danger">*</span>
+                    Mobile Number <span class="text-danger">*</span>
                 </label>
 
-                <input type="text" name="physics" [(ngModel)]="form.data.physics" maxlength="3"
-                    placeholder="Enter Physics Marks" class="form-control">
+                <input type="text"
+                    name="mobileNo"
+                    [(ngModel)]="form.data.mobileNo"
+                    placeholder="Enter Mobile Number"
+                    class="form-control">
 
                 <div class="text-danger small mt-1">
-                    {{form.inputerror.physics}}
+                    {{form.inputerror.mobileNo}}
                 </div>
             </div>
 
-            <!-- Chemistry -->
-            <div class="mb-3">
-                <label class="form-label fw-semibold">
-                    Chemistry <span class="text-danger">*</span>
-                </label>
-
-                <input type="text" name="chemistry" [(ngModel)]="form.data.chemistry" maxlength="3"
-                    placeholder="Enter Chemistry Marks" class="form-control">
-
-                <div class="text-danger small mt-1">
-                    {{form.inputerror.chemistry}}
-                </div>
-            </div>
-
-            <!-- Maths -->
+            <!-- Category -->
             <div class="mb-4">
                 <label class="form-label fw-semibold">
-                    Maths <span class="text-danger">*</span>
+                    Category <span class="text-danger">*</span>
                 </label>
 
-                <input type="text" name="maths" [(ngModel)]="form.data.maths" maxlength="3"
-                    placeholder="Enter Maths Marks" class="form-control">
+                <input type="text"
+                    name="category"
+                    [(ngModel)]="form.data.category"
+                    placeholder="Enter Category"
+                    class="form-control">
 
                 <div class="text-danger small mt-1">
-                    {{form.inputerror.maths}}
+                    {{form.inputerror.category}}
                 </div>
             </div>
 
             <!-- Buttons -->
-            <div class="d-flex gap-2">
+            <div class="d-flex gap-2 mt-4 pt-3 border-top">
 
-                <button type="button" (click)="submit()" class="btn btn-primary">
+                <button class="btn btn-primary" (click)="submit()">
                     <i class="bi bi-save me-1"></i>
                     Save
                 </button>
 
-                <button type="button" (click)="forward('marksheet-list')" class="btn btn-outline-secondary">
+                <button type="button"
+                    (click)="forward('vendor-list')"
+                    class="btn btn-outline-secondary">
+
                     <i class="bi bi-list-ul me-1"></i>
                     List
                 </button>

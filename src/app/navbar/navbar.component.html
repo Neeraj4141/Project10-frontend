@@ -3,6 +3,7 @@
    <a routerLink="/dashboard">
       <img src="assets/img/Rays.jpg" alt="ORS" height="40" class="rounded" style="object-fit: contain;">
    </a>
+
    <div class="container-fluid px-4">
       <!-- Mobile Toggle -->
       <button class="navbar-toggler me-3 border border-light rounded-3 p-2" type="button" data-bs-toggle="collapse"
@@ -26,7 +27,7 @@
             <!-- Marksheet -->
             <li class="nav-item dropdown">
                <a class="nav-link dropdown-toggle text-white px-3 py-3" href="#" data-bs-toggle="dropdown">
-                  <i class="bi bi-file-earmark-text me-1"></i> Marksheet
+                  <i class="bi bi-file-earmark-text me-1"></i> {{'Links.Marksheet' | translate}}
                </a>
 
                <ul class="dropdown-menu dropdown-menu-dark shadow border-0 rounded-3" style="background:#1a2e4a">
@@ -34,24 +35,24 @@
                   <li>
                      <a class="dropdown-item" [routerLink]="['/marksheet']">
                         <i class="bi bi-plus-circle me-2 text-success"></i>
-                        Add Marksheet
+                        {{'Links.Add Marksheet' | translate}}
                      </a>
                   </li>
 
                   <li>
                      <a class="dropdown-item" [routerLink]="['/marksheet-list']">
                         <i class="bi bi-list-ul me-2 text-primary"></i>
-                        Marksheet List
+                        {{'Links.Marksheet List' | translate}}
                      </a>
                   </li>
 
-                   <li>
+                  <li>
                      <a class="dropdown-item" [routerLink]="['/marksheetmeritlist']">
                         <i class="bi bi-list-ul me-2 text-primary"></i>
                         Marksheet Merit List
                      </a>
 
-                      <a class="dropdown-item" [routerLink]="['/getmarksheet']">
+                     <a class="dropdown-item" [routerLink]="['/getmarksheet']">
                         <i class="bi bi-list-ul me-2 text-primary"></i>
                         Get Marksheet
                      </a>
@@ -63,7 +64,7 @@
             <!-- Academics -->
             <li class="nav-item dropdown">
                <a class="nav-link dropdown-toggle text-white px-3 py-3" href="#" data-bs-toggle="dropdown">
-                  <i class="bi bi-mortarboard me-1"></i> Academics
+                  <i class="bi bi-mortarboard me-1"></i> {{'Links.Academics' | translate}}
                </a>
 
                <ul class="dropdown-menu dropdown-menu-dark shadow border-0 rounded-3" style="background:#1a2e4a">
@@ -71,14 +72,14 @@
                   <li>
                      <a class="dropdown-item" [routerLink]="['/college']">
                         <i class="bi bi-plus-circle me-2 text-success"></i>
-                        Add College
+                        {{'Links.Add College' | translate }}
                      </a>
                   </li>
 
                   <li>
                      <a class="dropdown-item" [routerLink]="['/college-list']">
                         <i class="bi bi-building me-2 text-primary"></i>
-                        College List
+                        {{'Links.College List' | translate}}
                      </a>
                   </li>
 
@@ -89,14 +90,14 @@
                   <li>
                      <a class="dropdown-item" [routerLink]="['/course']">
                         <i class="bi bi-plus-circle me-2 text-success"></i>
-                        Add Course
+                        {{'Links.Add Course' | translate}}
                      </a>
                   </li>
 
                   <li>
                      <a class="dropdown-item" [routerLink]="['/course-list']">
                         <i class="bi bi-list-ul me-2 text-primary"></i>
-                        Course List
+                        {{'Links.Course List' | translate}}
                      </a>
                   </li>
 
@@ -107,14 +108,14 @@
                   <li>
                      <a class="dropdown-item" [routerLink]="['/subject']">
                         <i class="bi bi-plus-circle me-2 text-success"></i>
-                        Add Subject
+                        {{'Links.Add Subject' | translate}}
                      </a>
                   </li>
 
                   <li>
                      <a class="dropdown-item" [routerLink]="['/subject-list']">
                         <i class="bi bi-list-ul me-2 text-primary"></i>
-                        Subject List
+                        {{'Links.Subject List' | translate}}
                      </a>
                   </li>
 
@@ -125,14 +126,14 @@
                   <li>
                      <a class="dropdown-item" [routerLink]="['/timetable']">
                         <i class="bi bi-plus-circle me-2 text-success"></i>
-                        Add Timetable
+                        {{'Links.Add Timetable' | translate}}
                      </a>
                   </li>
 
                   <li>
                      <a class="dropdown-item" [routerLink]="['/timetable-list']">
                         <i class="bi bi-list-ul me-2 text-primary"></i>
-                        Timetable List
+                        {{'Links.Timetable List' | translate}}
                      </a>
                   </li>
 
@@ -142,7 +143,7 @@
             <!-- People -->
             <li class="nav-item dropdown">
                <a class="nav-link dropdown-toggle text-white px-3 py-3" href="#" data-bs-toggle="dropdown">
-                  <i class="bi bi-people me-1"></i> People
+                  <i class="bi bi-people me-1"></i> {{'Links.People' | translate}}
                </a>
 
                <ul class="dropdown-menu dropdown-menu-dark shadow border-0 rounded-3" style="background:#1a2e4a">
@@ -150,14 +151,14 @@
                   <li>
                      <a class="dropdown-item" [routerLink]="['/user']">
                         <i class="bi bi-person-plus me-2 text-success"></i>
-                        Add User
+                        {{'Links.Add User' | translate}}
                      </a>
                   </li>
 
                   <li>
                      <a class="dropdown-item" [routerLink]="['/user-list']">
                         <i class="bi bi-person-lines-fill me-2 text-primary"></i>
-                        User List
+                        {{'Links.User List' | translate}}
                      </a>
                   </li>
 
@@ -168,14 +169,14 @@
                   <li>
                      <a class="dropdown-item" [routerLink]="['/role']">
                         <i class="bi bi-plus-circle me-2 text-success"></i>
-                        Add Role
+                        {{'Links.Add Role' | translate}}
                      </a>
                   </li>
 
                   <li>
                      <a class="dropdown-item" [routerLink]="['/role-list']">
                         <i class="bi bi-shield-fill-check me-2 text-primary"></i>
-                        Role List
+                        {{'Links.Role List' | translate}}
                      </a>
                   </li>
 
@@ -186,14 +187,14 @@
                   <li>
                      <a class="dropdown-item" [routerLink]="['/student']">
                         <i class="bi bi-person-plus me-2 text-success"></i>
-                        Add Student
+                        {{'Links.Add Student' | translate}}
                      </a>
                   </li>
 
                   <li>
                      <a class="dropdown-item" [routerLink]="['/student-list']">
                         <i class="bi bi-people me-2 text-primary"></i>
-                        Student List
+                        {{'Links.Student List' | translate}}
                      </a>
                   </li>
 
@@ -204,14 +205,14 @@
                   <li>
                      <a class="dropdown-item" [routerLink]="['/faculty']">
                         <i class="bi bi-plus-circle me-2 text-success"></i>
-                        Add Faculty
+                        {{'Links.Add Faculty' | translate}}
                      </a>
                   </li>
 
                   <li>
                      <a class="dropdown-item" [routerLink]="['/faculty-list']">
                         <i class="bi bi-person-lines-fill me-2 text-primary"></i>
-                        Faculty List
+                        {{'Links.Faculty List' | translate}}
                      </a>
                   </li>
 
@@ -220,27 +221,41 @@
 
          </ul>
 
-          <li class="nav-item dropdown">
-               <a class="nav-link dropdown-toggle text-white px-3 py-3" href="#" data-bs-toggle="dropdown">
-                  <i class="bi bi-file-earmark-text me-1"></i> Moduel
-               </a>
+         <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-white px-3 py-3" href="#" data-bs-toggle="dropdown">
+               <i class="bi bi-file-earmark-text me-1"></i> {{'Links.Modules' | translate}}
+            </a>
 
-               <ul class="dropdown-menu dropdown-menu-dark shadow border-0 rounded-3" style="background:#1a2e4a">
+            <ul class="dropdown-menu dropdown-menu-dark shadow border-0 rounded-3" style="background:#1a2e4a">
 
-                  <li>
-                     <a class="dropdown-item" [routerLink]="['/gymmember']">
-                        <i class="bi bi-plus-circle me-2 text-success"></i>
-                        Add Gym Member
-                     </a>
+               <li>
+                  <a class="dropdown-item" [routerLink]="['/gymmember']">
+                     <i class="bi bi-plus-circle me-2 text-success"></i>
+                     Add Gym Member
+                  </a>
 
-                      <a class="dropdown-item" [routerLink]="['/gymmember-list']">
-                        <i class="bi bi-plus-circle me-2 text-success"></i>
-                         GymMember List
-                     </a>
-                  </li>
+                  <a class="dropdown-item" [routerLink]="['/gymmember-list']">
+                     <i class="bi bi-person-lines-fill me-2 text-primary"></i>
+                     GymMember List
+                  </a>
+               </li>
+               <li>
+                  <hr class="dropdown-divider">
+               </li>
+               <li>
+                  <a class="dropdown-item" [routerLink]="['/vendor']">
+                     <i class="bi bi-plus-circle me-2 text-success"></i>
+                     Add Vendor
+                  </a>
 
-               </ul>
-            </li>
+                  <a class="dropdown-item" [routerLink]="['/vendor-list']">
+                     <i class="bi bi-person-lines-fill me-2 text-primary"></i>
+                     Vendor List
+                  </a>
+               </li>
+
+            </ul>
+         </li>
 
          <!-- Right Side -->
          <ul class="navbar-nav">
@@ -262,12 +277,14 @@
             </li>
          </ul>
       </div>
+
+
       <!-- Guest Menu -->
       <div class="collapse navbar-collapse" id="mainNav" *ngIf="!isLogin()"
          class="d-flex align-items-center gap-2 ms-auto">
 
          <span class="text-light fw-semibold">
-            Hi, Guest
+            {{'Greetings.Hi, Guest' | translate}}
          </span>
 
          <a class="btn btn-sm btn-outline-info px-3" [routerLink]="['/dashboard']">
@@ -282,5 +299,23 @@
 
       </div>
 
+   </div>
+
+   <!-- Language Dropdown -->
+   <div class="dropdown me-3">
+      <button class="btn btn-sm btn-outline-light dropdown-toggle px-3" type="button" data-bs-toggle="dropdown"
+         aria-expanded="false"> <i class="bi bi-translate me-2"></i>Language</button>
+      <ul class="dropdown-menu dropdown-menu-end shadow border-10 rounded-3">
+         <li>
+            <a class="dropdown-item" (click)="changeLocale('en')">
+               English
+            </a>
+         </li>
+         <li>
+            <a class="dropdown-item" (click)="changeLocale('hi')">
+               हिन्दी
+            </a>
+         </li>
+      </ul>
    </div>
 </nav>

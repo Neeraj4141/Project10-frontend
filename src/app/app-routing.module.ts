@@ -28,6 +28,8 @@ import { MarksheetmeritlistComponent } from './marksheet/marksheetmeritlist.comp
 import { GetmarksheetComponent } from './marksheet/getmarksheet.component';
 import { GymmemberComponent } from './gymmember/gymmember.component';
 import { GymmemberListComponent } from './gymmember/gymmember-list.component';
+import { VendorComponent } from './vendor/vendor.component';
+import { VendorListComponent } from './vendor/vendor-list.component';
 
 const routes: Routes = [
   {
@@ -190,6 +192,18 @@ const routes: Routes = [
   {
     path: 'gymmember-list',
     component: GymmemberListComponent
+  },
+  {
+    path: 'vendor',
+    component: VendorComponent
+  },
+   {
+    path: 'vendor-list',
+    component: VendorListComponent
+  },
+  {
+    path: 'vendor/:id',
+    component: VendorComponent
   }
 ];
 
