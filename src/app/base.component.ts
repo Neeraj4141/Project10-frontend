@@ -84,6 +84,7 @@ export class BaseCtl implements OnInit {
             _self.form.message = '';
             _self.form.inputerror = {};
             if (res.success) {
+                 _self.form.error = false;
                 _self.form.message = res.result.message;
                 _self.form.data.id = res.result.data;
             } else {
