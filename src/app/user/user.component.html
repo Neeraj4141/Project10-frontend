@@ -8,7 +8,7 @@
 
             <h5 class="mb-0 fw-bold" *ngIf="!form.data.id">
                 <i class="bi bi-person-fill-add me-2"></i>
-               {{'Add User' | translate }}
+                {{'Add User' | translate }}
             </h5>
 
             <h5 class="mb-0 fw-bold" *ngIf="form.data.id>0">
@@ -150,10 +150,37 @@
                     <small class="text-danger">{{form.inputerror.status}}</small>
                 </div>
 
+                <!-- Profile Image -->
+                <div class="col-12">
+                    <label class="form-label fw-semibold">
+                        {{'ProfileImage' | translate}}
+                    </label>
+
+                    <div class="mb-3 text-center">
+
+                        <!-- New Selected Image Preview -->
+                        <img *ngIf="imagePreview" [src]="imagePreview" class="img-thumbnail shadow-sm"
+                            style="width: 2.5cm; height: 2.5cm; object-fit: cover;">
+
+                        <!-- Existing Image From API -->
+                        <img *ngIf="!imagePreview && form.data.imageId"
+                            src="http://localhost:8080/User/profilePic/{{form.data.id}}" class="img-thumbnail shadow-sm"
+                            style="width: 2.5cm; height: 2.5cm; object-fit: cover;">
+
+                        <!-- Default Image -->
+                        <img *ngIf="!imagePreview && !form.data.imageId" src="assets/files/default.jpg"
+                            class="img-thumbnail shadow-sm" style="width: 2.5cm; height: 2.5cm; object-fit: cover;">
+
+                    </div>
+
+                    <input type="file" #fileInput class="form-control" accept="image/*"
+                        (change)="onFileSelect(fileInput.files)">
+                </div>
+
             </div>
 
             <div class="d-flex gap-2 mt-4 pt-3 border-top">
-                <button class="btn btn-primary" (click)="submit()">
+                <button class="btn btn-primary" (click)="onUpload()">
                     <i class="bi bi-save me-1"></i>
                     Save
                 </button>

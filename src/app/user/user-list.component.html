@@ -85,6 +85,7 @@
                         <th width="40">
                         <th><input type="checkbox" [(ngModel)]="isMasterSel" (change)="checkUncheckAll($event)" /></th>
                         <th>S.No</th>
+                        <th>Profile</th>
                         <th>First Name</th>
                         <th>Last Name</th>
                         <th>Login ID</th>
@@ -109,7 +110,15 @@
                         <td class="text-muted small">
                             {{(form.pageNo*5)+i+1}}
                         </td>
+                        <td class="text-center">
 
+                            <img *ngIf="m.imageId" [src]="'http://localhost:8080/User/profilePic/' + m.id"
+                                class="img-thumbnail" style="width: 1.5cm; height: 1.5cm; object-fit: cover;">
+
+                            <img *ngIf="!m.imageId" src="assets/files/default.jpg" class="img-thumbnail"
+                                style="width: 1.5cm; height: 1.5cm; object-fit: cover;">
+
+                        </td>
                         <td class="fw-semibold">
                             {{m.firstName}}
                         </td>

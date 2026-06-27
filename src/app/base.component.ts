@@ -78,7 +78,7 @@ export class BaseCtl implements OnInit {
         });
     }
 
-    submit() {
+       submit(callback?: (id: any) => void) {
         var _self = this;
         this.serviceLocator.httpService.post(this.api.save, this.form.data, function (res: any) {
             _self.form.message = '';
@@ -87,6 +87,10 @@ export class BaseCtl implements OnInit {
                  _self.form.error = false;
                 _self.form.message = res.result.message;
                 _self.form.data.id = res.result.data;
+                  _self.form.data.id = res.result.data;
+                   if (callback) {
+                        callback(_self.form.data.id);
+                    }
             } else {
                 _self.form.error = true;
                 if (res.result.inputerror) {

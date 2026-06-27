@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { BaseCtl } from '../base.component';
 import { ServiceLocatorService } from '../service-locator.service';
+import { BaseCtl } from '../base.component';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-user',
@@ -9,8 +10,74 @@ import { ServiceLocatorService } from '../service-locator.service';
 })
 export class UserComponent extends BaseCtl {
 
-  constructor(public locator: ServiceLocatorService, route: ActivatedRoute) {
+  fileToUpload: File | null = null;
+  imagePreview: any = null;
+
+  constructor(
+    private locator: ServiceLocatorService,
+    route: ActivatedRoute,
+    private httpClient: HttpClient
+  ) {
     super(locator.endpoints.USER, locator, route);
+  }
+
+  // 📁 FILE SELECT + PREVIEW
+  onFileSelect(files: FileList | null) {
+
+    if (!files || files.length === 0) {
+      console.log("No file selected");
+      return;
+    }
+
+    this.fileToUpload = files.item(0);
+
+    // Preview
+    if (this.fileToUpload) {
+      const reader = new FileReader();
+      reader.onload = (e: any) => {
+        this.imagePreview = e.target.result;
+      };
+      reader.readAsDataURL(this.fileToUpload);
+    }
+
+    console.log(this.fileToUpload);
+  }
+
+  onUpload() {
+
+    this.submit((id: any) => {
+
+      if (id) {
+        this.myFile(id); // ✅ id pass karo
+      }
+
+    });
+
+  }
+  // 📤 IMAGE UPLOAD METHOD
+  myFile(userId: number) {
+
+    console.log(userId + ' after submit');
+
+    if (!this.fileToUpload) {
+      console.log("No file selected");
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append('file', this.fileToUpload);
+
+    this.httpClient.post(
+      "http://localhost:8080/User/profilePic/" + userId,
+      formData
+    ).subscribe(
+      (data: any) => {
+        console.log("Upload Success:", data);
+      },
+      (error: any) => {
+        console.log("Upload Error:", error);
+      }
+    );
   }
 
 }

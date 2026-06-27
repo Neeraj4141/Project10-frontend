@@ -13,4 +13,16 @@ export class UserListComponent extends BaseListCtl {
     super(locator.endpoints.USER, locator, route);
   }
 
+  // optional image helper (not required if direct URL used)
+  imageToShow: any;
+
+  createImageFromBlob(image: Blob) {
+    let reader = new FileReader();
+    reader.onload = () => {
+      this.imageToShow = reader.result;
+    };
+    if (image) {
+      reader.readAsDataURL(image);
+    }
+  }
 }
