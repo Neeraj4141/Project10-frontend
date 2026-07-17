@@ -1,0 +1,97 @@
+{
+    "Login": "Login",
+    "Sign In": "Sign In",
+    "Sign Up": "Sign Up",
+    "Forget my password?": "Forget my password?",
+    "Login Id": "Login Id",
+    "Password": "Password",
+    "UserRegistration": "User Registration",
+    "FirstName": "First Name",
+    "LastName": "Last Name",
+    "LoginId": "Login Id",
+    "Password": "Password",
+    "DateOfBirth": "Date of Birth",
+    "Gender": "Gender",
+    "Mobile": "Mobile",
+    "Buttons": {
+        "SignUp": "Sign Up",
+        "Reset": "Reset"
+    },
+    "GenderOptions": {
+        "Select": "------------Select------------",
+        "Male": "Male",
+        "Female": "Female"
+    },
+    "Greetings": {
+        "HiUser": "Hi, {{name}} ( {{role}} )",
+        "Hi, Guest": "Hi, Guest"
+    },
+    "Links": {
+        "My Profile": "My Profile",
+        "Change Password": "Change Password",
+        "Add User": "Add User",
+        "User List": "User List",
+        "Add Role": "Add Role",
+        "Role List": "Role List",
+        "Add College": "Add College",
+        "College List": "College List",
+        "Add Student": "Add Student",
+        "Student List": "Student List",
+        "Marksheet": "Marksheet",
+        "Add Marksheet": "Add Marksheet",
+        "Marksheet List": "Marksheet List",
+        "Add Course": "Add Course",
+        "Course List": "Course List",
+        "Add Subject": "Add Subject",
+        "Subject List": "Subject List",
+        "Add Timetable": "Add Timetable",
+        "Timetable List": "Timetable List",
+        "Add Faculty": "Add Faculty",
+        "Faculty List": "Faculty List",
+        "Logout": "Logout",
+        "Dashboard": "Dashboard",
+        "Login": "Login",
+         "Academics": "Academics",
+        "People": "People",
+        "Modules": "Modules"
+    },
+    "LocaleSelect": {
+        "Select": "-------Select-------",
+        "English": "English",
+        "Hindi": "Hindi"
+    },
+    "UserForm": {
+        "AddUser": "Add User",
+        "UpdateUser": "Update User",
+        "FirstName": "First Name",
+        "LastName": "Last Name",
+        "LoginId": "Login Id",
+        "Password": "Password",
+        "DateOfBirth": "Date of Birth",
+        "Gender": "Gender",
+        "Role": "Role",
+        "Mobile": "Mobile",
+        "AlternateMobile": "Alternate Mobile",
+        "Status": "Status",
+        "Placeholders": {
+            "FirstName": "Enter First Name",
+            "LastName": "Enter Last Name",
+            "LoginId": "Enter Login ID",
+            "Password": "Enter Password",
+            "DateOfBirth": "Select Date of Birth",
+            "Mobile": "Enter Mobile No.",
+            "AlternateMobile": "Enter Alternate Mobile No."
+        },
+        "SelectOptions": {
+            "Select": "------------Select------------",
+            "Male": "Male",
+            "Female": "Female",
+            "Active": "Active",
+            "Inactive": "Inactive"
+        },
+        "Buttons": {
+            "Save": "Save",
+            "List": "List"
+        }
+    }
+}
