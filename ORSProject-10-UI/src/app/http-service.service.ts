@@ -6,35 +6,29 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class HttpServiceService {
+  constructor(
+    private httpClient: HttpClient,
+    private router: Router,
+  ) {}
 
-  constructor(private httpClient: HttpClient, private router: Router) {
-
+  post(endpoint: any, bean: any, callback?: any) {
+    return this.httpClient.post(endpoint, bean).subscribe((data) => {
+         callback(data);
+      },
+      (error) => {
+        this.handleError(error, callback);
+      }
+    );
   }
 
-  post(endpoint: any, bean: any, callback: any) {
-    return this.httpClient.post(endpoint, bean, { withCredentials: true }).subscribe((data) => {
+  get(endpoint: any, callback?: any) {
+    return this.httpClient.get(endpoint).subscribe((data) => {
       callback(data);
-    }, (error) => {
-      this.handleError(error);
-    });
-  }
-
-  get(endpoint: any, callback: any) {
-    return this.httpClient.get(endpoint, { withCredentials: true }).subscribe((data) => {
-      callback(data);
-    }, (error) => {
-      this.handleError(error);
-    });
-  }
-
-  private handleError(error: any): void {
-    console.error('Request failed', error);
-    if (error.status === 401) {
-      localStorage.clear();
-      this.router.navigate(['/login'], {
-        queryParams: { errorMessage: error.error.error }
-      });
-    }
+      },
+      (error) => {
+        this.handleError(error, callback);
+      }
+    );
   }
 
   getReport(url: string, token: string) {
@@ -53,4 +47,34 @@ export class HttpServiceService {
         this.handleError(error);
       });
   }
+
+  private handleError(error: any, callback?: any) {
+
+
+  let message = '';
+
+  if (error.status === 0) {
+    message = 'Backend server is down';
+  }
+
+  else if (error.status === 503) {
+    message = error.error?.result?.message || 'Database server down!!';
+  }
+
+
+  else if (error.status === 500) {
+    message = 'Internal server error';
+  }
+
+  this.router.navigate([this.router.url], {
+    queryParams: { errorMessage: message }
+  });
+
+  if (callback) {
+    callback({
+      success: false,
+      result: { message }
+    });
+  }
+}
 }

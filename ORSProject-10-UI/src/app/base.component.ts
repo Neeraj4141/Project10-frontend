@@ -47,7 +47,11 @@ export class BaseCtl implements OnInit {
         })
     }
 
+      databaseDown: string | null = null;
+
     ngOnInit(): void {
+
+            this.databaseDown = localStorage.getItem('DatabaseDown');
         this.preload();
         if (this.form.data.id && this.form.data.id > 0) {
             this.display();
