@@ -36,6 +36,8 @@ import { ParkingComponent } from './parking/parking.component';
 import { ParkingListComponent } from './parking/parking-list.component';
 import { FaceComponent } from './face/face.component';
 import { FaceListComponent } from './face/face-list.component';
+import { FooddeliveryComponent } from './fooddelivery/fooddelivery.component';
+import { FooddeliveryListComponent } from './fooddelivery/fooddelivery-list.component';
 
 const routes: Routes = [
   {
@@ -246,6 +248,18 @@ const routes: Routes = [
   {
     path: 'face/:id',
     component: FaceComponent
+  },
+  {
+    path: 'food',
+    component: FooddeliveryComponent
+  },
+   {
+    path: 'food-list',
+    component: FooddeliveryListComponent
+  },
+  {
+    path: 'food/:id',
+    component: FooddeliveryComponent
   }
 ];
 

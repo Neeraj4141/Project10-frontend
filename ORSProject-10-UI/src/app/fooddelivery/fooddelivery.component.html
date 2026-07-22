@@ -1,0 +1,166 @@
+```html
+<app-navbar></app-navbar>
+
+<div class="container py-4" style="max-width: 580px;">
+    <div class="card border-10 shadow-sm rounded-4 overflow-hidden">
+
+        <!-- Header -->
+        <div class="card-header text-white border-0 py-3 px-4"
+            style="background: linear-gradient(135deg, #0d2137 0%, #1565c0 100%);">
+
+            <h5 class="mb-0 fw-bold" *ngIf="!form.data.id">
+                <i class="bi bi-bag-check me-2"></i>
+                Add Food Delivery
+            </h5>
+
+            <h5 class="mb-0 fw-bold" *ngIf="form.data.id > 0">
+                <i class="bi bi-pencil-square me-2"></i>
+                Update Food Delivery
+            </h5>
+
+        </div>
+
+        <!-- Body -->
+        <div class="card-body px-4 py-4">
+
+            <!-- Error Message -->
+            <div class="alert alert-danger py-2 mx-3 mt-3 d-flex justify-content-between align-items-center"
+                *ngIf="form.error && form.message">
+
+                <span>
+                    <i class="bi bi-exclamation-circle-fill me-2"></i>
+                    {{form.message}}
+                </span>
+
+                <button type="button"
+                    class="btn-close"
+                    (click)="form.message=''">
+                </button>
+
+            </div>
+
+            <!-- Success Message -->
+            <div class="alert alert-success py-2 mx-3 mt-3 d-flex justify-content-between align-items-center"
+                *ngIf="!form.error && form.message">
+
+                <span>
+                    <i class="bi bi-check-circle-fill me-2"></i>
+                    {{form.message}}
+                </span>
+
+                <button type="button"
+                    class="btn-close"
+                    (click)="form.message=''">
+                </button>
+
+            </div>
+
+            <!-- Customer Code -->
+            <div class="mb-3">
+                <label class="form-label fw-semibold">
+                    Customer Code <span class="text-danger">*</span>
+                </label>
+
+                <input type="text"
+                    name="coustmerCode"
+                    [(ngModel)]="form.data.coustmerCode"
+                    placeholder="Enter Customer Code"
+                    class="form-control">
+
+                <div class="text-danger small mt-1">
+                    {{form.inputerror.coustmerCode}}
+                </div>
+            </div>
+
+            <!-- Food Name -->
+            <div class="mb-3">
+                <label class="form-label fw-semibold">
+                    Food Name <span class="text-danger">*</span>
+                </label>
+
+                <input type="text"
+                    name="foodName"
+                    [(ngModel)]="form.data.foodName"
+                    placeholder="Enter Food Name"
+                    class="form-control">
+
+                <div class="text-danger small mt-1">
+                    {{form.inputerror.foodName}}
+                </div>
+            </div>
+
+            <!-- Food Type -->
+            <div class="mb-3">
+                <label class="form-label fw-semibold">
+                    Food Type <span class="text-danger">*</span>
+                </label>
+
+                <input type="text"
+                    name="foodType"
+                    [(ngModel)]="form.data.foodType"
+                    placeholder="Enter Food Type"
+                    class="form-control">
+
+                <div class="text-danger small mt-1">
+                    {{form.inputerror.foodType}}
+                </div>
+            </div>
+
+            <!-- Address -->
+            <div class="mb-3">
+                <label class="form-label fw-semibold">
+                    Address <span class="text-danger">*</span>
+                </label>
+
+                <input type="text"
+                    name="address"
+                    [(ngModel)]="form.data.address"
+                    placeholder="Enter Address"
+                    class="form-control">
+
+                <div class="text-danger small mt-1">
+                    {{form.inputerror.address}}
+                </div>
+            </div>
+
+            <!-- Status -->
+            <div class="mb-4">
+                <label class="form-label fw-semibold">
+                    Status <span class="text-danger">*</span>
+                </label>
+
+                <input type="text"
+                    name="status"
+                    [(ngModel)]="form.data.status"
+                    placeholder="Enter Status"
+                    class="form-control">
+
+                <div class="text-danger small mt-1">
+                    {{form.inputerror.status}}
+                </div>
+            </div>
+
+            <!-- Buttons -->
+            <div class="d-flex gap-2 mt-4 pt-3 border-top">
+
+                <button class="btn btn-primary" (click)="submit()">
+                    <i class="bi bi-save me-1"></i>
+                    Save
+                </button>
+
+                <button type="button"
+                    (click)="forward('food-list')"
+                    class="btn btn-outline-secondary">
+
+                    <i class="bi bi-list-ul me-1"></i>
+                    List
+                </button>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>
+```

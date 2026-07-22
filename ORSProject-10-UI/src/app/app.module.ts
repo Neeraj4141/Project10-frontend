@@ -50,6 +50,8 @@ import { ParkingComponent } from './parking/parking.component';
 import { ParkingListComponent } from './parking/parking-list.component';
 import { FaceComponent } from './face/face.component';
 import { FaceListComponent } from './face/face-list.component';
+import { FooddeliveryComponent } from './fooddelivery/fooddelivery.component';
+import { FooddeliveryListComponent } from './fooddelivery/fooddelivery-list.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -95,7 +97,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     ParkingComponent,
     ParkingListComponent,
     FaceComponent,
-    FaceListComponent
+    FaceListComponent,
+    FooddeliveryComponent,
+    FooddeliveryListComponent
   ],
   imports: [
     BrowserModule,
