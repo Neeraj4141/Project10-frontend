@@ -23,4 +23,5 @@ export class EndpointServiceService {
   public PARKING = this.SERVER_URL + "/Parking";
   public FACE = this.SERVER_URL + "/Face";
    public FOOD = this.SERVER_URL + "/Food";
+   public DEPARTMENT = this.SERVER_URL + "/Department";
 }

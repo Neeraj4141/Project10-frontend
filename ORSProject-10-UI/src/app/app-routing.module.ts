@@ -38,6 +38,8 @@ import { FaceComponent } from './face/face.component';
 import { FaceListComponent } from './face/face-list.component';
 import { FooddeliveryComponent } from './fooddelivery/fooddelivery.component';
 import { FooddeliveryListComponent } from './fooddelivery/fooddelivery-list.component';
+import { DepartmentComponent } from './department/department.component';
+import { DepratmentListComponent } from './department/depratment-list.component';
 
 const routes: Routes = [
   {
@@ -205,7 +207,7 @@ const routes: Routes = [
     path: 'vendor',
     component: VendorComponent
   },
-   {
+  {
     path: 'vendor-list',
     component: VendorListComponent
   },
@@ -217,7 +219,7 @@ const routes: Routes = [
     path: 'drone',
     component: DroneComponent
   },
-   {
+  {
     path: 'drone-list',
     component: DroneListComponent
   },
@@ -229,7 +231,7 @@ const routes: Routes = [
     path: 'parking',
     component: ParkingComponent
   },
-   {
+  {
     path: 'parking-list',
     component: ParkingListComponent
   },
@@ -241,7 +243,7 @@ const routes: Routes = [
     path: 'face',
     component: FaceComponent
   },
-   {
+  {
     path: 'face-list',
     component: FaceListComponent
   },
@@ -253,13 +255,25 @@ const routes: Routes = [
     path: 'food',
     component: FooddeliveryComponent
   },
-   {
+  {
     path: 'food-list',
     component: FooddeliveryListComponent
   },
   {
     path: 'food/:id',
     component: FooddeliveryComponent
+  },
+  {
+    path: 'department',
+    component: DepartmentComponent
+  },
+  {
+    path: 'department-list',
+    component: DepratmentListComponent
+  },
+  {
+    path: 'department/:id',
+    component: DepartmentComponent
   }
 ];
 
