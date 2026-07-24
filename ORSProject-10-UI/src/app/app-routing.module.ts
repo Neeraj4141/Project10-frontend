@@ -40,6 +40,8 @@ import { FooddeliveryComponent } from './fooddelivery/fooddelivery.component';
 import { FooddeliveryListComponent } from './fooddelivery/fooddelivery-list.component';
 import { DepartmentComponent } from './department/department.component';
 import { DepratmentListComponent } from './department/depratment-list.component';
+import { ResultComponent } from './result/result.component';
+import { ResultListComponent } from './result/result-list.component';
 
 const routes: Routes = [
   {
@@ -274,6 +276,18 @@ const routes: Routes = [
   {
     path: 'department/:id',
     component: DepartmentComponent
+  },
+  {
+    path: 'result',
+    component: ResultComponent
+  },
+  {
+    path: 'result-list',
+    component: ResultListComponent
+  },
+  {
+    path: 'result/:id',
+    component: ResultComponent
   }
 ];
 

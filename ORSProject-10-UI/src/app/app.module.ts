@@ -54,6 +54,8 @@ import { FooddeliveryComponent } from './fooddelivery/fooddelivery.component';
 import { FooddeliveryListComponent } from './fooddelivery/fooddelivery-list.component';
 import { DepartmentComponent } from './department/department.component';
 import { DepratmentListComponent } from './department/depratment-list.component';
+import { ResultComponent } from './result/result.component';
+import { ResultListComponent } from './result/result-list.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -103,7 +105,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     FooddeliveryComponent,
     FooddeliveryListComponent,
     DepartmentComponent,
-    DepratmentListComponent
+    DepratmentListComponent,
+    ResultComponent,
+    ResultListComponent
   ],
   imports: [
     BrowserModule,
